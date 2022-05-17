@@ -1,10 +1,17 @@
 import { UniqueIdService } from "./unique-id.service";
 
+
+
 describe(UniqueIdService.name, () => {
+
+    let service: UniqueIdService
+
+    beforeEach(()=> {
+        service = new UniqueIdService();
+    });
 
     it(`#${UniqueIdService.prototype.generatedUniqueIdWithPrefix.name} should generate id when called with prefix `, () => {
 
-        const service = new UniqueIdService();
 
         const id = service.generatedUniqueIdWithPrefix('app');
         expect(id.startsWith('app-')).toBeTrue();
@@ -12,7 +19,7 @@ describe(UniqueIdService.name, () => {
 
     // testando duplicidade dos ids gerados
     it(`#${UniqueIdService.prototype.generatedUniqueIdWithPrefix.name} should not generate duplicate IDs when called multiple times `,()=>{
-        const service = new UniqueIdService();
+       
         const ids = new Set();
         for( let i = 0; i < 50; i++){
             ids.add(service.generatedUniqueIdWithPrefix('app'));
@@ -25,7 +32,7 @@ describe(UniqueIdService.name, () => {
     })
 
     it(`#${UniqueIdService.prototype.getNumberOfGeneratedUniquIds.name} should return the number of generateIds when called`, ()=> {
-        const service = new UniqueIdService();
+        
         service.generatedUniqueIdWithPrefix('app');
         service.generatedUniqueIdWithPrefix('app');
 
