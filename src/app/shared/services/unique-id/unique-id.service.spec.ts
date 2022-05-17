@@ -23,4 +23,12 @@ describe(UniqueIdService.name, () => {
         // const secoundId = service.generatedUniqueIdWithPrefix('app');
         // expect(firstId).not.toBe(secoundId);
     })
+
+    it(`#${UniqueIdService.prototype.getNumberOfGeneratedUniquIds.name} should return the number of generateIds when called`, ()=> {
+        const service = new UniqueIdService();
+        service.generatedUniqueIdWithPrefix('app');
+        service.generatedUniqueIdWithPrefix('app');
+
+        expect(service.getNumberOfGeneratedUniquIds()).toBe(2);
+    })
 });
