@@ -17,6 +17,7 @@ describe(UniqueIdService.name, () => {
         expect(id.startsWith('app-')).toBeTrue();
     });
 
+
     // testando duplicidade dos ids gerados
     it(`#${UniqueIdService.prototype.generatedUniqueIdWithPrefix.name} should not generate duplicate IDs when called multiple times `,()=>{
        
@@ -37,5 +38,19 @@ describe(UniqueIdService.name, () => {
         service.generatedUniqueIdWithPrefix('app');
 
         expect(service.getNumberOfGeneratedUniquIds()).toBe(2);
+    })
+
+    it(`#${UniqueIdService.prototype.generatedUniqueIdWithPrefix.name} should throw when called with empty`,()=>{
+
+        const emptyValues = [null, undefined, '', '0', '1', 'app'];
+
+        emptyValues.forEach(emptyValues => {
+            expect(() => service.generatedUniqueIdWithPrefix(emptyValues))
+            .withContext(`empty value: ${emptyValues}`)
+            .toThrow();
+        })
+        // expect(() => service.generatedUniqueIdWithPrefix(null)).toThrow();
+        // expect(()=> service.generatedUniqueIdWithPrefix(undefined)).toThrow();
+        // expect(() => service.generatedUniqueIdWithPrefix('')).toThrow();
     })
 });
