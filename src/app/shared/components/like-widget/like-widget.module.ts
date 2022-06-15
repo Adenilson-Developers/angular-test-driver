@@ -15,8 +15,7 @@ import { LikeWidgetComponent } from './like-widget.component';
         FontAwesomeModule
     ],
 
-    exports: [
-        LikeWidgetComponent ],
+    exports: [LikeWidgetComponent ],
     providers: [UniqueIdService]
   })
 
