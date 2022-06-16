@@ -10,6 +10,7 @@ describe(LikeWidgetComponent.name, () => {
     //let component: LikeWidgetComponent = null;
 
     let fixture: ComponentFixture<LikeWidgetComponent>;
+    let component: LikeWidgetComponent;
 
 
     beforeEach( async ()=> {
@@ -21,6 +22,7 @@ describe(LikeWidgetComponent.name, () => {
         }).compileComponents();
 
         fixture = TestBed.createComponent(LikeWidgetComponent);
+        //component = fixture.componentInstance
     })
 
     it('Should created component',() => {
@@ -40,4 +42,13 @@ describe(LikeWidgetComponent.name, () => {
         fixture.detectChanges();
         expect(component.id).toBe(someId)
     })
+
+    it(`#${LikeWidgetComponent.prototype.like.name} should trigger emission  when called `,()=> {
+        fixture.detectChanges();
+        component.liked.subscribe(()=>{
+            expect(true).toBeTrue();
+        });
+        component.like();
+    });
+ 
 })
