@@ -14,7 +14,7 @@ export class LikeWidgetComponent implements OnInit{
     @Input() public likes = 0;
     @Input() public id = '';
     public fonts = { faThumbsUp };
-    leked: any;
+    // leked: any;
 
     constructor(private uniqueIdService: UniqueIdService){}
         
