@@ -40,6 +40,12 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Firefox'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: {
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: '-headless'
+      }
+    }
   });
 };
