@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<testsuite name="Firefox 101.0 (Windows 10)" package="" timestamp="2022-06-22T00:54:52" id="0" hostname="DESKTOP-LJLFB93" tests="9" errors="0" failures="0" time="0.162">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0"/>
+  </properties>
+  <testcase name="AppComponent should have as title 'ng-test1' " time="0.054" classname="Firefox_101_0_(Windows_10).AppComponent"/>
+  <testcase name="AppComponent should create the app" time="0.02" classname="Firefox_101_0_(Windows_10).AppComponent"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix should not generate duplicate IDs when called multiple times " time="0.003" classname="Firefox_101_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix should generate id when called with prefix " time="0" classname="Firefox_101_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #generatedUniqueIdWithPrefix should throw when called with empty" time="0.002" classname="Firefox_101_0_(Windows_10).UniqueIdService"/>
+  <testcase name="UniqueIdService #getNumberOfGeneratedUniquIds should return the number of generateIds when called" time="0.001" classname="Firefox_101_0_(Windows_10).UniqueIdService"/>
+  <testcase name="LikeWidgetComponent Should Not auto-generate ID during ngOnInit when  (@Input id) is assigned" time="0.052" classname="Firefox_101_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Should auto-generate ID during ngOnInit when (@Input id) is not assigned" time="0.016" classname="Firefox_101_0_(Windows_10).LikeWidgetComponent"/>
+  <testcase name="LikeWidgetComponent Should created component" time="0.014" classname="Firefox_101_0_(Windows_10).LikeWidgetComponent"/>
+  <system-out>
+    <![CDATA[Firefox 101.0 (Windows 10) ERROR: 'NG0304: 'app-leke-widget' is not a known element:
+1. If 'app-leke-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-leke-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 101.0 (Windows 10) ERROR: 'NG0304: 'app-leke-widget' is not a known element:
+1. If 'app-leke-widget' is an Angular component, then verify that it is part of this module.
+2. If 'app-leke-widget' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Firefox 101.0 (Windows 10) ERROR: 'NG0303: Can't bind to 'aria-live' since it isn't a known property of 'span'.'
+,Firefox 101.0 (Windows 10) ERROR: 'NG0303: Can't bind to 'aria-atomic' since it isn't a known property of 'span'.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
