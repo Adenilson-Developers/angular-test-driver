@@ -26,4 +26,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Documentando funcionalidades
+O primeiro passo é construir um componente que será o componente de `like`
+
+Criando service que será responsável por gera `IDs únicos ` para os componentes
+
+
+export class UniqueIdService {
+    private numberOfGeneratedIds = 0;
+
+    public generateUniqueIdWithPrefix(prefix: string ): string{
+        // se o prefixo passado n tiver prefixo ele lança um erro
+        if (!prefix){
+            throw Error('Prefix can not be empty');
+        }
+        const uniqueId = this.generateUniqueId();
+        this.numberOfGeneratedIds++;
+        return `${prefix}-${uniqueId}`; // retorno o id utilizando prefixo 
+    }
+
+    // retorna a quantidade de ids gerado
+    public getNumberOfGeneratedUniqueIds(): number{
+        return this.numberOfGeneratedIds;
+    }
+
+    //esse metodo vai delegar a geração de id único 
+    private generateUniqueId(): string {
+        return uuidv4();
+    }
+}
 
