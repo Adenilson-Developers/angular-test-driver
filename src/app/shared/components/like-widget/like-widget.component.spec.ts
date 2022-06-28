@@ -43,15 +43,15 @@ describe(LikeWidgetComponent.name, () => {
         expect(component.id).toBe(someId)
     })
 
-    // it(`#${LikeWidgetComponent.prototype.like.name} should trigger @(Output liked) when called `, () => {
-    //     // usando spyOn para espionar o método
-    //     spyOn(component.liked, 'emit')
-    //     fixture.detectChanges();
-    //     component.liked.subscribe(()=>{
-    //         expect(component.liked.emit).toHaveBeenCalled()
-    //         // verificando se o método foi chamado ou não, usando toHaveBeenCalled 
-    //     });
-    //     component.like();
-    // });
+    it(`#${LikeWidgetComponent.prototype.like.name} should trigger @(Output liked) when called `, () => {
+        // usando spyOn para espionar o método
+        spyOn(component.liked, 'emit')
+        fixture.detectChanges();
+        component.liked.subscribe(()=>{
+            expect(component.liked.emit).toHaveBeenCalled()
+            // verificando se o método foi chamado ou não, usando toHaveBeenCalled 
+        });
+        component.like();
+    });
  
 })
