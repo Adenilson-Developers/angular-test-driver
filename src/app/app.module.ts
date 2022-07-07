@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LikeWidgetModule } from './shared/components/like-widget/like-widget.module';
+import { PhotoFrameModule } from './shared/photo-frame/photo-frame.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { LikeWidgetModule } from './shared/components/like-widget/like-widget.mo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LikeWidgetModule
+    LikeWidgetModule,
+    PhotoFrameModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

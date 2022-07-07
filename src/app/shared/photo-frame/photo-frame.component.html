@@ -1,0 +1,15 @@
+<div class="photo-frame-container">
+    <img 
+        tabindex="0"
+        class="photo"
+        [alt]="description"
+        [src]="src">
+    <div class="like-bar">
+        <app-leke-widget
+        [likes]="likes"
+        (liked)="like()"
+        >
+        </app-leke-widget>
+
+    </div>
+</div>

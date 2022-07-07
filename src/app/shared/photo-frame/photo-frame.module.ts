@@ -4,13 +4,17 @@ import {NgModule } from '@angular/core';
 import { PhotoFrameComponent } from './photo-frame.component';
 
 @NgModule({
-    declarations: [],
-    imports: [
-        CommonModule,
-        LikeWidgetModule,
+    declarations: [
         PhotoFrameComponent
     ],
-    exports: []
+    imports: [
+        CommonModule,
+        LikeWidgetModule
+        
+    ],
+    exports: [
+        PhotoFrameComponent
+    ]
 })
 
-export class PhotoFlameModule {};
+export class PhotoFrameModule {};
