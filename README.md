@@ -273,6 +273,7 @@ describe(nome da classe que você quer testar , () => {
 // Asseções assíncronas 
   ** done
 
+
   [O done avisa se o teste falhou ou não, nesse caso  ]
 
   it(`#${LikeWidgetComponent.prototype.name} should trigger emission when called`, done =>{
