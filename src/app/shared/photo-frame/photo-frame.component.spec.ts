@@ -29,10 +29,25 @@ describe( PhotoFrameComponent.name, () => {
         let times = 0;
         component.liked.subscribe(() => times++);
         component.like();
-        tick(500);
-        expect(times).toBe(0);
+        component.like();
         
-        discardPeriodicTasks()
+        tick(500);
+        expect(times).toBe(1);
+
+        discardPeriodicTasks();
     }));
 
-})
+    it(`#${PhotoFrameComponent.prototype.like.name}
+    should trigger (@Output liked) two times when
+    called outside debouce time`, fakeAsync(()=>{
+        fixture.detectChanges();
+        let times = 0;
+        component.liked.subscribe(() => times++);
+        component.like();
+        tick(500);
+        component.like();
+        tick(500);
+        expect(times).toBe(2)
+    }));
+
+});
