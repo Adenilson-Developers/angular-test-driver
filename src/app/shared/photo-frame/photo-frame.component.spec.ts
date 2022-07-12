@@ -7,7 +7,11 @@ describe( PhotoFrameComponent.name, () => {
     let fixture: ComponentFixture<PhotoFrameComponent>;
     let component: PhotoFrameComponent;
 
+    var originalTimeout;
+
     beforeEach( async() => {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
 
         await TestBed.configureTestingModule({
             imports: [PhotoFrameModule]
@@ -99,4 +103,19 @@ describe( PhotoFrameComponent.name, () => {
         const likeWidgetContainerEl = fixture.nativeElement.querySelector('.like-widget-container');
         likeWidgetContainerEl.click();
     });
+
+    it(`(D) Should display number of likes when ENTER key is pressed`, done => {
+        fixture.detectChanges();
+        component.liked.subscribe(() => {
+            component.likes++;
+            fixture.detectChanges();
+            const counterEl: HTMLElement = fixture.nativeElement.querySelector('.like-conter');
+
+            done();
+        })
+        const likeWidgetContainerEl: HTMLElement = fixture.nativeElement.querySelector('.like-widget-container')
+        const event = new KeyboardEvent('keyup', {key: 'Enter'});
+        likeWidgetContainerEl.dispatchEvent(event);
+
+    })
 });
