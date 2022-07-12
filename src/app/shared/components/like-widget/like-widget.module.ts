@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { LikeWidgetComponent } from './like-widget.component';
+import { ActionDirectiveModule } from '../../directives/action/action.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { LikeWidgetComponent } from './like-widget.component';
     ],
     imports: [
         CommonModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        ActionDirectiveModule
     ],
 
     exports: [LikeWidgetComponent ],
