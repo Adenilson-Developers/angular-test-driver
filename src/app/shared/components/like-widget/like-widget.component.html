@@ -10,11 +10,11 @@
     >
     </fa-icon>
 
-    <span class="like-conter"
+    <span
+    class="like-conter"
     [attr.id]="id"
-    [attr.area-label] = "likes + 'pople liked'"
-    >
-        {{ likes }}
-    </span>
+    [attr.aria-label] = "likes + ': pople liked'"
+    aria-live="true"
+    aria-atomic="true">{{ likes }}</span>
     
 </div>
