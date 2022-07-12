@@ -7,11 +7,11 @@ describe( PhotoFrameComponent.name, () => {
     let fixture: ComponentFixture<PhotoFrameComponent>;
     let component: PhotoFrameComponent;
 
-    var originalTimeout;
+    // var originalTimeout;
 
     beforeEach( async() => {
-        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
+        // originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        // jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
 
         await TestBed.configureTestingModule({
             imports: [PhotoFrameModule]
