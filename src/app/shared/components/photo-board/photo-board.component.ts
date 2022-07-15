@@ -12,15 +12,19 @@ import { Photo } from "./interfaces/photo";
 export class PhotoBoardComponent implements OnChanges {
 
     @Input()
-    public photos!: Photo[];
+    public photos: Photo[] = [];
     public rows: any[][] = [];
 
     public ngOnChanges(changes: SimpleChanges): void {
-        for(let photos in changes){
-            let change = changes[photos];
-            let curVal = change.currentValue;
-            this.rows = this.groupColumns(curVal);
+
+        if(changes.photos){
+            this.rows = this.groupColumns(changes.photos.currentValue);
         }
+        // for(let photos in changes){
+        //     let change = changes[photos];
+        //     let curVal = change.currentValue;
+        //     this.rows = this.groupColumns(curVal);
+        // }
     }
 
     public groupColumns(photos: Photo[]): any[][] {
