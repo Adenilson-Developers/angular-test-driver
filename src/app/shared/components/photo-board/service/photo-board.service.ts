@@ -10,6 +10,8 @@ export class PhotoBoardService{
     constructor(private http: HttpClient){}
 
     public getPhotos(): Observable<Photo[]>{
-        return this.http.get<Photo[]>('http:localhost:3000/photos')
+        return this.http.get<Photo[]>('http://localhost:3000/photos')
+
+    
     }
 }

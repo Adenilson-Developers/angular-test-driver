@@ -10,9 +10,8 @@ import { Photo } from "./interfaces/photo";
 })
 
 export class PhotoBoardComponent implements OnChanges {
-
-    @Input()
-    public photos: Photo[] = [];
+    
+    @Input() public photos: Photo[] = [];
     public rows: any[][] = [];
 
     public ngOnChanges(changes: SimpleChanges): void {
@@ -29,10 +28,10 @@ export class PhotoBoardComponent implements OnChanges {
 
     public groupColumns(photos: Photo[]): any[][] {
         const newRows = [];
-        const step = 0;
+        const step = 4;
 
         for(let index = 0; index < photos.length; index += step){
-            newRows.push(photos.splice(index, index + step));
+            newRows.push(photos.slice(index, index + step));
         }
         return newRows;
     }
