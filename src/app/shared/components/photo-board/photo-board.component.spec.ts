@@ -29,7 +29,7 @@ describe( PhotoBoardComponent.name, () => {
         component = fixture.componentInstance;
     });
 
-    it('Should display rows and colmns when (@Input photos ) has value', ()=>{
+    it('(DC)Should display rows and colmns when (@Input photos ) has value', ()=>{
         component.photos = buildPhotoList();
         fixture.detectChanges();
         const change: SimpleChanges = {

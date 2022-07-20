@@ -19,7 +19,5 @@ export class AppComponent  implements OnInit{
 
   public ngOnInit(): void {
     this.photos$ = this.service.getPhotos();
-
-    console.log('Mostrar console',this.photos$)
   }
 }
