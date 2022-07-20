@@ -36,8 +36,10 @@ describe(PhotoListComponent.name, ()=>{
         fixture.detectChanges();
         const board = fixture.nativeElement.querySelector('app-photo-board');
         const loader = fixture.nativeElement.querySelector('.loader');
-        expect(board).not.toBeNull();
-        expect(loader).toBeNull();
+        expect(board).withContext('Should display board')
+        .not.toBeNull();
+        expect(loader).withContext('Should not diplay loader')
+        .toBeNull();
     });
 
     it('(D) Should display loader while waiting for data',()=> {
@@ -46,7 +48,9 @@ describe(PhotoListComponent.name, ()=>{
         fixture.detectChanges();
         const board = fixture.nativeElement.querySelector('app-photo-board');
         const loader = fixture.nativeElement.querySelector('.loader');
-        expect(board).toBeNull();
-        expect(loader).not.toBeNull();
+        expect(board).withContext('Should not diplay board')
+        .toBeNull();
+        expect(loader).withContext('Should display loader')
+        .not.toBeNull();
     })
 })
