@@ -6,6 +6,7 @@ import { PhotoListComponent } from "./photo-list.component";
 import { PhotoListModule } from "./photo-list.module";
 import { buildPhotoList } from 'src/app/shared/components/photo-board/test/build-photo-list';
 import { Photo } from 'src/app/shared/components/photo-board/interfaces/photo';
+import { PhotoBoardMockService } from 'src/app/shared/components/photo-board/service/photo-board-mock.service';
 
 describe(PhotoListComponent.name + 'Mock provider', ()=>{
     
@@ -24,11 +25,7 @@ describe(PhotoListComponent.name + 'Mock provider', ()=>{
             providers: [
                 {
                     provide: PhotoBoardService,
-                    useValue: {
-                        getPhotos(): Observable<Photo[]>{
-                            return of(buildPhotoList());
-                        }
-                    }
+                    useClass: PhotoBoardMockService
                 }
             ]
         }).compileComponents();
